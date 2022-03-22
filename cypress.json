@@ -1,0 +1,4 @@
+{
+  "integrationFolder": "./e2e/features",
+  "pluginsFile": "./e2e/plugins/index.js"
+}

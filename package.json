@@ -1,0 +1,133 @@
+{
+  "name": "angular-starter-kit",
+  "version": "0.0.6",
+  "description": "angular base project with minimal configuration",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "jest --detectOpenHandles",
+    "lint": "ng lint",
+    "e2e": "cypress open",
+    "commit": "git-cz",
+    "lint:fix": "ng lint --fix",
+    "prettier:check": "prettier --check 'src/**/*.{ts,js}'",
+    "prettier:fix": "prettier --write 'src/**/*.{ts,scss,js}'",
+    "validate": "run-s lint:fix lint prettier:fix prettier:check",
+    "release": "standard-version",
+    "postrelease": "run-s release:*",
+    "release:tags": "git push --follow-tags origin main",
+    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
+    "storybook": "yarn docs:json && start-storybook -p 6006",
+    "build-storybook": "yarn docs:json && build-storybook"
+  },
+  "keywords": [
+    "angular",
+    "startkit",
+    "frontend",
+    "typescript",
+    "standard-version",
+    "commitizen",
+    "husky",
+    "jest",
+    "storybook",
+    "prettier",
+    "compodoc",
+    "yarn"
+  ],
+  "private": true,
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog",
+      "disableScopeLowerCase": false,
+      "disableSubjectLowerCase": false,
+      "pre-commit": "lint-staged"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.scss": [
+      "prettier --write",
+      "git add"
+    ],
+    "src/**/*.ts": [
+      "prettier --write",
+      "ng lint --fix",
+      "git add"
+    ]
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "./e2e/step-definitions"
+  },
+  "dependencies": {
+    "@angular/animations": "~13.0.0",
+    "@angular/cdk": "^13.2.4",
+    "@angular/common": "~13.0.0",
+    "@angular/compiler": "~13.0.0",
+    "@angular/core": "~13.0.0",
+    "@angular/forms": "~13.0.0",
+    "@angular/material": "^13.2.4",
+    "@angular/platform-browser": "~13.0.0",
+    "@angular/platform-browser-dynamic": "~13.0.0",
+    "@angular/router": "~13.0.0",
+    "@ngxs/store": "^3.7.3",
+    "lodash": "^4.17.21",
+    "rxjs": "~7.4.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~13.0.3",
+    "@angular-eslint/builder": "13.1.0",
+    "@angular-eslint/eslint-plugin": "13.1.0",
+    "@angular-eslint/eslint-plugin-template": "13.1.0",
+    "@angular-eslint/schematics": "13.1.0",
+    "@angular-eslint/template-parser": "13.1.0",
+    "@angular/cli": "~13.0.3",
+    "@angular/compiler-cli": "~13.0.0",
+    "@babel/core": "^7.17.5",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@compodoc/compodoc": "^1.1.19",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/angular": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
+    "@types/jasmine": "~3.10.0",
+    "@types/jest": "^27.4.1",
+    "@types/lodash": "^4.14.179",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "5.11.0",
+    "@typescript-eslint/parser": "5.11.0",
+    "babel-loader": "^8.2.3",
+    "commitizen": "^4.2.4",
+    "commitlint": "^16.2.1",
+    "conventional-github-releaser": "^3.1.5",
+    "cypress": "^9.5.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-storybook": "^0.5.7",
+    "git-authors-cli": "^1.0.37",
+    "husky": "^7.0.4",
+    "jasmine-core": "~3.10.0",
+    "jest": "^27.5.1",
+    "jest-preset-angular": "^11.1.1",
+    "lint-staged": "^12.3.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "standard-version": "^9.3.2",
+    "ts-node": "^10.5.0",
+    "typescript": "~4.4.3"
+  }
+}
