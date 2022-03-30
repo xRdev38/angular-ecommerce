@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/real-world",
+            "outputPath": "dist/angular-ecommerce",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "real-world:build:production"
+              "browserTarget": "angular-ecommerce:build:production"
             },
             "development": {
-              "browserTarget": "real-world:build:development"
+              "browserTarget": "angular-ecommerce:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "real-world:build"
+            "browserTarget": "angular-ecommerce:build"
           }
         },
         "lint": {
@@ -99,7 +99,7 @@
       }
     }
   },
-  "defaultProject": "real-world",
+  "defaultProject": "angular-ecommerce",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }
