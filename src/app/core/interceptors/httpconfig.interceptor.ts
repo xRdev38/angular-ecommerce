@@ -17,7 +17,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
 		request: HttpRequest<any>,
 		next: HttpHandler
 	): Observable<HttpEvent<any>> {
-		const token: string = localStorage.getItem("token");
+		const token: string | null = localStorage.getItem("token");
 
 		if (token) {
 			request = request.clone({
@@ -43,14 +43,6 @@ export class HttpConfigInterceptor implements HttpInterceptor {
 				return event;
 			}),
 			catchError((error: HttpErrorResponse) => {
-				let data = {};
-				data = {
-					reason:
-						error && error.error && error.error.reason
-							? error.error.reason
-							: "",
-					status: error.status
-				};
 				return throwError(error);
 			})
 		);
