@@ -1,7 +1,7 @@
 {
-  "name": "angular-starter-kit",
+  "name": "angular-ecommerce",
   "version": "0.0.6",
-  "description": "angular base project with minimal configuration",
+  "description": "angular e-commerce project",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -26,8 +26,8 @@
     "node": "^12.22.0 || ^14.15.0 || >=16.0.0"
   },
   "keywords": [
+    "e-commerce",
     "angular",
-    "startkit",
     "frontend",
     "typescript",
     "standard-version",

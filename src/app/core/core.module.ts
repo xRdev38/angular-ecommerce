@@ -3,24 +3,9 @@ import { CommonModule } from "@angular/common";
 
 import { CoreRoutingModule } from "@core/core-routing.module";
 import { throwIfAlreadyLoaded } from "@core/utils/module-import-guard";
-import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import { HttpConfigInterceptor } from "@core/interceptors/httpconfig.interceptor";
-import { CacheInterceptor } from "@core/interceptors/cache.interceptor";
 
 @NgModule({
 	declarations: [],
-	providers: [
-		{
-			provide: HTTP_INTERCEPTORS,
-			useClass: HttpConfigInterceptor,
-			multi: true
-		},
-		{
-			provide: HTTP_INTERCEPTORS,
-			useClass: CacheInterceptor,
-			multi: true
-		}
-	],
 	imports: [CommonModule, CoreRoutingModule]
 })
 export class CoreModule {

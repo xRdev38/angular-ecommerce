@@ -14,6 +14,7 @@ import { map, catchError } from "rxjs/operators";
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {
 	intercept(
+		/* eslint-disable */
 		request: HttpRequest<any>,
 		next: HttpHandler
 	): Observable<HttpEvent<any>> {
@@ -36,6 +37,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
 		});
 
 		return next.handle(request).pipe(
+			/* eslint-disable */
 			map((event: HttpEvent<any>) => {
 				if (event instanceof HttpResponse) {
 					console.log("event--->>>", event);

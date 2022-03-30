@@ -23,9 +23,11 @@
     ],
     "paths": {
       "@core/*": ["src/app/core/*"],
-      "@modules/*": ["src/app/modules/*"],
-      "@environments/*": ["src/environments/*"],
-      "@shared/*": ["src/app/shared/*"]
+      "@data/*": ["src/app/data/*"],
+      "@entities/*": ["src/app/entities/*"],
+      "@presentation/*": ["src/app/presentation/*"],
+      "@service/*": ["src/app/service/*"],
+      "@environments/*": ["src/environments/*"]
     }
   },
   "angularCompilerOptions": {
