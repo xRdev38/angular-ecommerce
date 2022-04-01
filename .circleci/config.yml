@@ -23,7 +23,7 @@ jobs:
       - run: yarn run build
       - deploy:
           command: |
-            ./node_modules/.bin/surge --project ~/angular-ecommerce/dist/real-world --domain angular-ecommerce.surge.sh
+            ./node_modules/.bin/surge --project ~/angular-ecommerce/dist/real-world --domain angular-ecommerce-fake-api-dev.surge.sh
 workflows:
     build-and-test:
       jobs:
