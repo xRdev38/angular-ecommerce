@@ -19,11 +19,11 @@ jobs:
           key: angular-ecommerce-{{ .Branch }}-{{ checksum "yarn.lock"}}
           paths:
             - "nodes_modules"
-      - run: yarn run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI  
+      - run: yarn run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
       - run: yarn run build
       - deploy:
           command: |
-            ./node_modules/.bin/surge --project ~/angular-ecommerce/dist/angular-ecommerce --domain angular-ecommerce.surge.sh
+            ./node_modules/.bin/surge --project ~/angular-ecommerce/dist/real-world --domain angular-ecommerce.surge.sh
 workflows:
     build-and-test:
       jobs:
